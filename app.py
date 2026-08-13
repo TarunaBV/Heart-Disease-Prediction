@@ -12,7 +12,11 @@ st.title("Heart Disease Prediction")
 st.write("Enter patient's details below:")
 
 age = st.number_input("Age", min_value = 1, max_value = 120, value = 30)
-sex = st.number_input("Sex", min_value = 0, max_value = 1, value = 0)
+sex_input = st.selectbox("Sex", ["Male", "Female"])
+if sex_input == "Male":
+    sex = 1
+else:
+    sex = 0
 cp = st.number_input("Chest Pain Type", min_value=0, value=0)
 trestbps = st.number_input("Resting Blood Pressure", min_value=0, value=120)
 chol = st.number_input("Cholesterol", min_value=0, value=200)
